@@ -1,0 +1,28 @@
+stages:
+  - build
+  - restart
+  - status
+  
+build:
+    stage: build
+    tags:
+      - eow3
+    script:
+      - echo "pull the code"
+      - cd /mnt/test/
+      - git pull origin master
+       
+restart:
+    stage: restart
+    tags:
+      - eow3
+    script:
+      - echo "restart the code"
+      - systemctl status sdcdemo.service   
+status:
+    stage: status
+    tags:
+      - eow3
+    script:
+      - echo "check service status"
+      - systemctl status sdcdemo.service
