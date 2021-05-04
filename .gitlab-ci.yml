@@ -10,6 +10,7 @@ build:
     script:
       - echo "pull the code"
       - cd /mnt/test/
+      - git status
       - git pull origin master
        
 restart:
