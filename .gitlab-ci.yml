@@ -6,21 +6,21 @@ stages:
 build:
     stage: build
     tags:
-      - eow3
+      - test
     script:
       - echo "pull the code"
        
 restart:
     stage: restart
     tags:
-      - eow3
+      - test
     script:
       - echo "restart the code"
       - systemctl status sdcdemo.service   
 status:
     stage: status
     tags:
-      - eow3
+      - test
     script:
       - echo "check service status"
       - systemctl status sdcdemo.service
