@@ -9,6 +9,7 @@ build:
       - test
     script:
       - echo "pull the code"
+      - git pull
        
 restart:
     stage: restart
