@@ -12,7 +12,7 @@ build:
     script:
       - echo "pull the code"
       - git pull origin master
-       
+      - cp -r /home/gitlab-runner/builds/NXp2edKC/0/root/test/ /mnt/test/
 restart:
     stage: restart
     tags:
