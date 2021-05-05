@@ -11,7 +11,8 @@ build:
        - master 
     script:
       - echo "pull the code"
-      - if["$CI_COMMIT_REF_NAME" =="master"]; then cp -R /mnt/* /mnt/test/; fi
+      - git pull origin master
+      - cp -R /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
       
 restart:
     stage: restart
