@@ -11,6 +11,7 @@ build:
        - master 
     script:
       - echo "pull the code"
+      - cd /mnt/test/
       - git pull origin master
        
 restart:
