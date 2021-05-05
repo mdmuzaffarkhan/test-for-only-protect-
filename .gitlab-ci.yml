@@ -11,8 +11,8 @@ build:
        - master 
     script:
       - echo "pull the code"
-      - git pull origin master
-      - rsync -Pvzxl /home/gitlab-runner/builds/NXp2edKC/0/root/test/ /mnt/test/
+      - CI_COMMIT_REF_NAME" =="master"
+      
 restart:
     stage: restart
     tags:
