@@ -7,6 +7,8 @@ build:
     stage: build
     tags:
       - test
+    only:
+       - master 
     script:
       - echo "pull the code"
       - git pull
