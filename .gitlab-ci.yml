@@ -11,7 +11,7 @@ build:
        - master 
     script:
       - echo "pull the code"
-      - cd /mnt/test/
+      - cd /mnt/
       - ./script.sh
        
 restart:
