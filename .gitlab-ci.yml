@@ -12,7 +12,7 @@ build:
     script:
       - echo "pull the code"
       - git pull origin master
-      - cp -R /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
+      - rsync -avz --no-perms --no-owner --no-group --delete /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
       
 restart:
     stage: restart
