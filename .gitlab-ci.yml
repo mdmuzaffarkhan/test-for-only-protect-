@@ -9,8 +9,6 @@ build:
       - eow3
     script:
       - echo "pull the code"
-      - cd /mnt/
-      - ./script.sh
        
 restart:
     stage: restart
