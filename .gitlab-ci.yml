@@ -11,11 +11,7 @@ build:
        - master 
     script:
       - echo "pull the code"
-      - eval $(ssh-agent -s)
-      - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-      - mkdir -p ~/.ssh
-      - echo "${SSH_HOST_KEY}" > ~/.ssh/known_hosts
-      - rsync -rtlv --chown=root:root --chmod=D775,F644 /home/gitlab-runner/builds/NXp2edKC/0/root/test /mnt/
+      - rsync -rtlv --delete --chown=root:root --chmod=D775,F644 /home/gitlab-runner/builds/NXp2edKC/0/root/test /mnt/
       #- cd /mnt/test/
       #- git pull origin master
       #- rsync -vzl --no-perms --no-owner --no-group --delete /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
