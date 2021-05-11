@@ -11,8 +11,8 @@ build:
        - master 
     script:
       - echo "pull the code"
-      - cd /mnt/test/
-      - git pull origin master
+      #- cd /mnt/test/
+      #- git pull origin master
       #- rsync -vzl --no-perms --no-owner --no-group --delete /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
       
 restart:
