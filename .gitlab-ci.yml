@@ -17,7 +17,8 @@ build:
     script:
       - echo "pull the code"
       - ls -la
-      - rsync -rtlv --delete --chown=root:root --chmod=D775,F644 /home/gitlab-runner/builds/NXp2edKC/0/root/test /mnt/
+      - rsync -rtlv --delete --chown=root:root --chmod=D775,F644 test root@root@163.172.251.185:/mnt/ -e 'ssh -p24455'
+      #- rsync -rtlv --delete --chown=root:root --chmod=D775,F644 /home/gitlab-runner/builds/NXp2edKC/0/root/test /mnt/
       #- cd /mnt/test/
       #- git pull origin master
       #- rsync -vzl --no-perms --no-owner --no-group --delete /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
