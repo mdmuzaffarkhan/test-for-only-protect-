@@ -9,14 +9,14 @@ build:
       - test
     only:
        - master 
-    before_script:
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
+    #before_script:
+    #- eval $(ssh-agent -s)
+    #- echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    #- mkdir -p ~/.ssh
+    #- chmod 700 ~/.ssh
     script:
-      - echo "pull the code"
-      - ls -la
+      - echo "pulled the code"
+    #  - ls -la
       #- rsync -avrc --delete --exclude='.git' "$PWD" /mnt/
       #- rsync -vv -rz --checksum --delete --exclude='.git' --chown=odoo:odoo --chmod=D775,F644 "$PWD" /mnt/test/
       #- rsync -rtlv --delete --chown=odoo:odoo --chmod=D775,F644 "$PWD" /mnt/test/
