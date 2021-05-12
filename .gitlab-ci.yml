@@ -7,8 +7,8 @@ build:
     stage: build
     tags:
       - test
-    only:
-       - master 
+    #only:
+    #   - master 
     #before_script:
     #- eval $(ssh-agent -s)
     #- echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
@@ -16,6 +16,9 @@ build:
     #- chmod 700 ~/.ssh
     script:
       - echo "pulled the code"
+      - git status
+    only:
+      - master
     #  - ls -la
       #- rsync -avrc --delete --exclude='.git' "$PWD" /mnt/
       #- rsync -vv -rz --checksum --delete --exclude='.git' --chown=odoo:odoo --chmod=D775,F644 "$PWD" /mnt/test/
