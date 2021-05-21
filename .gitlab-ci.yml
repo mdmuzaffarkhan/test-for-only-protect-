@@ -4,7 +4,6 @@ stages:
  - status
 
 build:
-<<<<<<< HEAD
  only:
   variables:
    - $CI_COMMIT_MESSAGE =~ /trigger ci/
@@ -14,29 +13,6 @@ build:
  script:
   - echo "pulled the code"
   - git status
-=======
-    stage: build
-    tags:
-      - test
-    #only:
-    #   - master 
-    #before_script:
-    #- eval $(ssh-agent -s)
-    #- echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    #- mkdir -p ~/.ssh
-    #- chmod 700 ~/.ssh
-    script:
-      - echo "pulled the code"
-      - git status
-    #  - ls -la
-      #- rsync -avrc --delete --exclude='.git' "$PWD" /mnt/
-      #- rsync -vv -rz --checksum --delete --exclude='.git' --chown=odoo:odoo --chmod=D775,F644 "$PWD" /mnt/test/
-      #- rsync -rtlv --delete --chown=odoo:odoo --chmod=D775,F644 "$PWD" /mnt/test/
-      #- cd /mnt/test/
-      #- git pull origin master
-      #- rsync -vzl --no-perms --no-owner --no-group --delete /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
-      
->>>>>>> 42143c661ba6326d2c06c19dc3ef21ae4e8381dc
 restart:
  only:
   variables:
@@ -57,4 +33,3 @@ status:
  script:
   - echo "check service status"
   - systemctl status sdcdemo.service
-
