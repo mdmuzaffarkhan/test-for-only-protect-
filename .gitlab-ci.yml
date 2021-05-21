@@ -4,6 +4,9 @@ stages:
   - status
   
 build:
+    only:
+     variables:
+      - $CI_COMMIT_MESSAGE =- /trigger ci/
     stage: build
     tags:
       - test
@@ -17,8 +20,6 @@ build:
     script:
       - echo "pulled the code"
       - git status
-    only:
-      - master
     #  - ls -la
       #- rsync -avrc --delete --exclude='.git' "$PWD" /mnt/
       #- rsync -vv -rz --checksum --delete --exclude='.git' --chown=odoo:odoo --chmod=D775,F644 "$PWD" /mnt/test/
