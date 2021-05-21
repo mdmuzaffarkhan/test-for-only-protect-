@@ -5,7 +5,7 @@ stages:
   
 build:
     only:
-     variables:
+      variables:
       - $CI_COMMIT_MESSAGE =- /trigger ci/
     stage: build
     tags:
