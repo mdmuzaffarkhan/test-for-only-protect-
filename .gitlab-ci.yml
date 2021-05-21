@@ -1,9 +1,20 @@
 stages:
-  - build
-  - restart
-  - status
-  
+ - build
+ - restart
+ - status
+
 build:
+<<<<<<< HEAD
+ only:
+  variables:
+   - $CI_COMMIT_MESSAGE =~ /trigger ci/
+ stage: build
+ tags:
+  - test
+ script:
+  - echo "pulled the code"
+  - git status
+=======
     stage: build
     tags:
       - test
@@ -25,17 +36,25 @@ build:
       #- git pull origin master
       #- rsync -vzl --no-perms --no-owner --no-group --delete /home/gitlab-runner/builds/NXp2edKC/0/root/test/* /mnt/test/
       
+>>>>>>> 42143c661ba6326d2c06c19dc3ef21ae4e8381dc
 restart:
-    stage: restart
-    tags:
-      - test
-    script:
-      - echo "restart the code"
-      - systemctl status sdcdemo.service   
+ only:
+  variables:
+   - $CI_COMMIT_MESSAGE =~ /trigger ci/
+ stage: restart
+ tags:
+  - test
+ script:
+  - echo "restart the code"
+  - systemctl status sdcdemo.service
 status:
-    stage: status
-    tags:
-      - test
-    script:
-      - echo "check service status"
-      - systemctl status sdcdemo.service
+ only:
+  variables:
+   - $CI_COMMIT_MESSAGE =~ /trigger ci/
+ stage: status
+ tags:
+  - test
+ script:
+  - echo "check service status"
+  - systemctl status sdcdemo.service
+
