@@ -4,9 +4,6 @@ stages:
   - status
   
 build:
-    only:
-      variables:
-      - $CI_COMMIT_MESSAGE =- /trigger ci/
     stage: build
     tags:
       - test
