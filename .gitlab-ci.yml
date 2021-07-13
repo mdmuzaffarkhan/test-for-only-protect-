@@ -1,35 +1,21 @@
 stages:
- - build
- - restart
- - status
+  - build
+  - status
 
 build:
- only:
-  variables:
-   - $CI_COMMIT_MESSAGE =~ /trigger ci/
- stage: build
- tags:
-  - test
- script:
-  - echo "pulled the code"
-  - git status
-restart:
- only:
-  variables:
-   - $CI_COMMIT_MESSAGE =~ /trigger ci/
- stage: restart
- tags:
-  - test
- script:
-  - echo "restart the code"
-  - systemctl status sdcdemo.service
+    stage: build
+    tags:
+      - test
+    only:
+       - master
+    script:
+      - echo "pull the code"
+      - git pull origin master
+
 status:
- only:
-  variables:
-   - $CI_COMMIT_MESSAGE =~ /trigger ci/
- stage: status
- tags:
-  - test
- script:
-  - echo "check service status"
-  - systemctl status sdcdemo.service
+    stage: status
+    tags:
+      - test
+    script:
+      - echo "check service status"
+      - systemctl status sdcdemo.service
