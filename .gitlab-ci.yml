@@ -1,21 +1,50 @@
 stages:
-  - build
-  - status
-
-build:
-    stage: build
-    tags:
-      - test
+  - build-stg
+  - status-stg
+  - build-prod
+  - status-prod
+  
+build-stg:
     only:
-       - master
-    script:
-      - echo "pull the code"
-      - git pull origin master
-
-status:
-    stage: status
+      - staging
+    except:
+      - master
+    stage: build-stg
     tags:
-      - test
+      - stg
+    script:
+      - echo "pulled the code"
+      - git status
+status-stg:
+    only:
+      - staging
+    except:
+      - master
+    stage: status-stg
+    tags:
+      - stg
     script:
       - echo "check service status"
-      - systemctl status sdcdemo.service
+      - systemctl status apache2.service
+build-prod:
+    only:
+      - master
+    except:
+      - staging 
+    stage: build-prod
+    tags:
+      - prod
+    script:
+      - echo "pulled the code"
+      - git status
+status-prod:
+    only:
+      - master
+    except:
+      - staging 
+    stage: status-prod
+    tags:
+      - prod
+    script:
+      - echo "check service status"
+      - systemctl status apache2.service
