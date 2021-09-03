@@ -25,7 +25,7 @@ status-stg:
       - stg
     script:
       - echo "check service status"
-      - systemctl status apache2.service
+      - systemctl status nginx.service
 build-prod:
     only:
       - master
