@@ -4,7 +4,7 @@ stages:
 build:
     only:
       changes:
-        - kabilan1
+        - kabilan1/*
     stage: build
     tags:
       - stg
