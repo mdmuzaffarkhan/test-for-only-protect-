@@ -1,49 +1,27 @@
 stages:
-  - build-stg
-  - status-stg
-  - build-prod
-  - status-prod
+  - build
+  - status
   
-build-stg:
+build:
     only:
       - staging
-    except:
-      - master
-    stage: build-stg
+    stage: build
     tags:
       - stg
     script:
       - echo "pulled the code"
       - pwd
       - git status
-status-stg:
+status:
     only:
       - staging
-    except:
-      - master
-    stage: status-stg
+    stage: status
     tags:
       - stg
     script:
       - echo "check service status"
       - systemctl status nginx.service
-build-prod:
-    only:
-      - master
-    except:
-      - staging 
-    stage: build-prod
-    tags:
-      - prod
-    script:
-      - echo "pulled the code"
-      - git status
-status-prod:
-    only:
-      - master
-    except:
-      - staging 
-    stage: status-prod
+b
     tags:
       - prod
     script:
