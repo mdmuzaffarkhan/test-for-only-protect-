@@ -5,7 +5,7 @@ build:
   only:
     changes:
      - kabilan1/*
-  when: manual
+  when: schedules
   stage: build
   tags:
     - stg
