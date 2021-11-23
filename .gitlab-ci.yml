@@ -1,12 +1,13 @@
 stages:
   - build
 
-test:
-  stage: build
-  tags:
+build:
+  kabilan1:
+    stage: build
+    tags:
     - stg
-  rules:
-    changes:
-      - kabilan1/*
-  script:
-    - echo "kabilan1"
+    rules:
+      changes:
+       - kabilan1/*
+    script:
+       - echo "kabilan1"
