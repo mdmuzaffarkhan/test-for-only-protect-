@@ -21,9 +21,3 @@ status:
     script:
       - echo "check service status"
       - systemctl status nginx.service
-b
-    tags:
-      - prod
-    script:
-      - echo "check service status"
-      - systemctl status apache2.service
