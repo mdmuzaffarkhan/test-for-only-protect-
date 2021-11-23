@@ -4,13 +4,14 @@ stages:
   
 build:
     only:
-      - staging
+      changes:
+        - kabilan1
     stage: build
     tags:
       - stg
     script:
       - echo "pulled the code"
-      - pwd
+      - echo "kabilan1"
       - git status
 status:
     only:
