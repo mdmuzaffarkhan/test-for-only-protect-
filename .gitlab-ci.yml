@@ -9,8 +9,8 @@ build:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan1/*
-    script:
-      - echo "kabilan1"
+  script:
+    - echo "kabilan1"
 
       
     
