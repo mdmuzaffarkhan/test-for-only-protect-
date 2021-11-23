@@ -6,7 +6,6 @@ kabilan1:
   tags:
     - stg
   rules:
-  - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan1/*
   script:
@@ -16,7 +15,6 @@ kabilan2:
   tags:
     - stg
   rules:
-  - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan2/*
   script:
@@ -26,7 +24,6 @@ kabilan3:
   tags:
     - stg
   rules:
-  - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan3/*
   script:
