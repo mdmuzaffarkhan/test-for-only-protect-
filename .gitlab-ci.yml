@@ -10,7 +10,5 @@ build:
   tags:
     - stg
   script:
-    - echo "pulled the code"
     - echo "kabilan1"
-    - git status
     
