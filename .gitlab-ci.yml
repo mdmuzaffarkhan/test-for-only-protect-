@@ -1,7 +1,6 @@
 stages:
   - build
-  - status
-  
+
 build:
     only:
       changes:
@@ -13,12 +12,3 @@ build:
       - echo "pulled the code"
       - echo "kabilan1"
       - git status
-status:
-    only:
-      - staging
-    stage: status
-    tags:
-      - stg
-    script:
-      - echo "check service status"
-      - systemctl status nginx.service
