@@ -2,9 +2,9 @@ stages:
   - build
 
 build:
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-  only: 
+  only:
+    rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
      - kabilan1/*
   stage: build
