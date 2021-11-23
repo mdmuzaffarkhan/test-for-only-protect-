@@ -2,9 +2,8 @@ stages:
   - build
 
 build:
-  only:
-    - schedules
-  changes:
+  only: 
+    changes:
      - kabilan1/*
   stage: build
   tags:
