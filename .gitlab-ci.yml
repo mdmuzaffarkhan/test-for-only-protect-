@@ -1,28 +1,11 @@
 stages:
   - build
 
-kabilan1:
+build:
   stage: build
   tags:
     - stg
   rules:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
-    changes:
-      - kabilan1/*
   script:
-    - >
-      if git diff HEAD~ --name-only|grep kabilan1; then
-      echo "kabilan1"
-      fi;
-
-kabilan2:
-  stage: build
-  tags:
-    - stg
-  script:
-    - echo "kabilan2"
-  rules:
-  - if: $CI_PIPELINE_SOURCE == "schedule" 
-    changes:
-      - kabilan2/*
-
+    - sh /var/www/test-stg/build/e4yErvJ1/0/root/test.sh
