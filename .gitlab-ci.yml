@@ -11,9 +11,6 @@ build:
       - kabilan1/*
     script:
       - echo "kabilan1"
-    changes:
-      - kabilan2/*
-    script:
-      - echo "kabilan2"
+
       
     
