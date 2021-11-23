@@ -9,6 +9,9 @@ kabilan1:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan1/*
+  except:
+      - kabilan2/*
+      - kabilan3/*
   script:
     - echo "kabilan1"
 
@@ -20,6 +23,9 @@ kabilan2:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan2/*
+  except:
+      - kabilan1/*
+      - kabilan3/*
   script:
     - echo "kabilan2"
 
@@ -31,5 +37,8 @@ kabilan3:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan3/*
+  except:
+      - kabilan1/*
+      - kabilan2/*
   script:
     - echo "kabilan3"
