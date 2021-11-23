@@ -5,6 +5,8 @@ build:
   only: 
     changes:
      - kabilan1/*
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
   stage: build
   tags:
     - stg
