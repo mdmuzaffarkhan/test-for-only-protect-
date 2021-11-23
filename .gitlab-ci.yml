@@ -5,7 +5,7 @@ build:
   kabilan1:
     stage: build
     tags:
-    - stg
+      - stg
     rules:
       changes:
        - kabilan1/*
