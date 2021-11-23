@@ -2,8 +2,7 @@ stages:
   - build
 
 build:
-  only:
-    rules:
+  rules:
     - if: $CI_PIPELINE_SOURCE == "schedule" 
   stage: build
   tags:
