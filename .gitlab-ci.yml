@@ -4,6 +4,8 @@ stages:
 build:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule" 
+  changes:
+     - kabilan1/*
   stage: build
   tags:
     - stg
@@ -11,6 +13,4 @@ build:
     - echo "pulled the code"
     - echo "kabilan1"
     - git status
-  only:
-    changes:
-     - kabilan1/*
+    
