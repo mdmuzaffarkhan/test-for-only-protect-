@@ -3,9 +3,9 @@ stages:
 
 build:
   only:
-     - schedules
     changes:
-     - kabilan1/* 
+     - kabilan1/*
+  when: manual
   stage: build
   tags:
     - stg
