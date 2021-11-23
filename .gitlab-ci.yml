@@ -6,11 +6,11 @@ build:
     - if: $CI_PIPELINE_SOURCE == "schedule"
   only:
     changes:
-      - kabilan1/*
-    stage: build
-    tags:
-      - stg
-    script:
-      - echo "pulled the code"
-      - echo "kabilan1"
-      - git status
+     - kabilan1/*
+  stage: build
+  tags:
+    - stg
+  script:
+    - echo "pulled the code"
+    - echo "kabilan1"
+    - git status
