@@ -3,9 +3,9 @@ stages:
 
 build:
   only:
-    changes:
+    - schedules
+  changes:
      - kabilan1/*
-  when: on_success
   stage: build
   tags:
     - stg
