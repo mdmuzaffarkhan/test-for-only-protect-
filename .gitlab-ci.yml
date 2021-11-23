@@ -5,20 +5,21 @@ kabilan1:
   stage: build
   tags:
     - stg
+  script:
+    - echo "kabilan1"
   rules:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan1/*
-  script:
-    - echo "kabilan1"
 
 kabilan2:
   stage: build
   tags:
     - stg
+  script:
+    - echo "kabilan2"
   rules:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan2/*
-  script:
-    - echo "kabilan2"
+
