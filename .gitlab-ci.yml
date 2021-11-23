@@ -14,7 +14,7 @@ build-stg:
       - stg
     script:
       - echo "pulled the code"
-      - ip a
+      - pwd
       - git status
 status-stg:
     only:
