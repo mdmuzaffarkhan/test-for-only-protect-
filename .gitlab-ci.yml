@@ -8,4 +8,4 @@ build:
   rules:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
   script:
-    - sh /var/www/test-stg/build/e4yErvJ1/0/root/test.sh
+    - sh /mnt/script.sh
