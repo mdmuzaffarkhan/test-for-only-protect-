@@ -5,12 +5,15 @@ kabilan1:
   stage: build
   tags:
     - stg
-  script:
-    - echo "kabilan1"
   rules:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
     changes:
       - kabilan1/*
+  script:
+    - >
+      if git diff HEAD~ --name-only|grep kabilan1; then
+      echo "kabilan1"
+      fi;
 
 kabilan2:
   stage: build
