@@ -1,5 +1,6 @@
 stages:
   - build
+  - Install
 
 build:
   stage: build
@@ -9,3 +10,10 @@ build:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
   script:
     - sh /mnt/script2.sh
+Install:
+  stage: install
+  tags:
+    - stg
+  script:
+    - yum info nginx
+  when: manual
