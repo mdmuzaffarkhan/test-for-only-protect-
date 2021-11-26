@@ -11,7 +11,7 @@ build:
   script:
     - sh /mnt/script2.sh
 Install:
-  stage: install
+  stage: Install
   tags:
     - stg
   script:
