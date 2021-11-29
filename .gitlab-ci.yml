@@ -9,7 +9,7 @@ build:
   rules:
   - if: $CI_PIPELINE_SOURCE == "schedule" 
   script:
-    - sh /mnt/script2.sh
+    - sh /mnt/script3.sh
 Install:
   stage: Install
   tags:
