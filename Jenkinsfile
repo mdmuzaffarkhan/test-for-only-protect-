@@ -2,7 +2,7 @@ pipeline {
   agent {
     node {  
       label 'jen'
-      customWorkspace 'testing staging '
+      customWorkspace 'checking automation in mirroring  '
     }
   }
     stages {
